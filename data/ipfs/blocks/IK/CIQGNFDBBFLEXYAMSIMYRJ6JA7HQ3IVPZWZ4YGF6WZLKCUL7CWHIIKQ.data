@@ -1,0 +1,50 @@
+
+³«dataSources:
+  - kind: ethereum
+    mapping:
+      abis:
+        - file:
+            /: /ipfs/QmNdjam9hSgkxjWELax85ozgszvuW71UARb62fHdpmQvXZ
+          name: Contract
+      apiVersion: 0.0.7
+      entities:
+        - BidItemBought
+        - BidItemListed
+        - ItemBought
+        - ItemCanceled
+        - ItemListed
+        - RaiseBidPrice
+      eventHandlers:
+        - event: 'BidItemBought(indexed address,indexed address,uint256,uint256)'
+          handler: handleBidItemBought
+        - event: >-
+            BidItemListed(indexed address,indexed address,indexed
+            uint256,uint256)
+          handler: handleBidItemListed
+        - event: 'ItemBought(indexed address,indexed address,indexed uint256,uint256)'
+          handler: handleItemBought
+        - event: 'ItemCanceled(indexed address,indexed address,uint256)'
+          handler: handleItemCanceled
+        - event: 'ItemListed(indexed address,indexed address,indexed uint256,uint256)'
+          handler: handleItemListed
+        - event: >-
+            RaiseBidPrice(indexed address,indexed address,indexed
+            uint256,uint256,uint256)
+          handler: handleRaiseBidPrice
+      file:
+        /: /ipfs/QmYAyqBJs2hGvRyPNtaA1JnQ6Ly3HK2KLx4sQiH2gTzTHc
+      kind: ethereum/events
+      language: wasm/assemblyscript
+    name: Contract
+    network: sepolia
+    source:
+      abi: Contract
+      address: '0x78a10Ad00434Ce44e0ACAC9293A258EEdDdcAA51'
+      startBlock: 5442098
+indexerHints:
+  prune: auto
+schema:
+  file:
+    /: /ipfs/QmW6Dj1inDVAAjxDqGaE5mR7ngRe98KFRw1NopL2bqp2Lc
+specVersion: 1.0.0
+«
